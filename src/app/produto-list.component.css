@@ -1,0 +1,15 @@
+.panel-heading{
+    color: black;
+}
+.btn{
+    margin-left: 10px;
+}
+.card{
+    background: transparent;
+    height: 80%;
+}
+label{
+    padding-left: 100px;
+    color: black;
+    font-family: courier,times,helvetica;
+}

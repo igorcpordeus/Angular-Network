@@ -1,0 +1,19 @@
+.typing-element{
+    font-family: courier,times,helvetica;
+    color: black;
+    padding-top: 30px;
+    padding-left: 100px;
+    font-size: 40px;
+    
+}
+.div_cover{
+    background-size: cover;
+}
+.inicial{
+    padding-left: 150px;
+    padding-top: 190px;
+    padding-bottom: 180px;
+}
+.btn{
+    background-color: black;
+}

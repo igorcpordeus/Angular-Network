@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+    <h2>Detalhes do Produto</h2>
+
+    <hr />
+    <div *ngIf="produto">
+      <div>
+        <label><b>Nome: </b></label> {{produto.nome}}
+      </div>
+      <div>
+        <label><b>Marca: </b></label> {{produto.marca}}
+      </div>
+      <div>
+        <label><b>Preço: </b></label> {{produto.preco | currency:'R$'}}
+      </div>
+      <div>
+        <label><b>Quantidade: </b></label> {{produto.quantidade}}
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <button (click)="list()" class="btn btn-primary">Voltar para Lista de Produtos</button><br>
+  </div>
+</div>

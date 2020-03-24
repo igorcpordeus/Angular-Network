@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+h4{
+    color: rgba(44, 212, 29, 0.959);
+}
+
+.colorful {
+  background-size: cover;
+  background:
+    -webkit-linear-gradient(90deg, hsla(193.58, 100%, 50%, 1) 0%, hsla(193.58, 100%, 50%, 0) 62%);
+  background:
+    linear-gradient(0deg, hsla(193.58, 100%, 50%, 1) 0%, hsla(193.58, 100%, 50%, 0) 62%);
+    
+  }
+html, body{
+  height: 100%;
+}

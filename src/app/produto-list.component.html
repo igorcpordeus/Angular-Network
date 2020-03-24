@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-body">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Lista de Produtos</h3>
+      </div>
+
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"></div>
+          <div class="col-xs-2 col-md-2">
+            <label>Buscar:</label>
+          </div>
+          <div class="col-xs-4 col-md-4">
+            <nav class="navbar">
+              <input class="form-control" type="text" name="search" [(ngModel)]="filter" placeholder="Buscar" >
+            </nav>
+          </div>
+        </div>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Marca</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Funcionalidades</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let produto of produtos | async | paginate: { itemsPerPage: 4, currentPage: paginaAtual } | filter:filter; let i = index">
+              <td>{{produto.nome}}</td>
+              <td>{{produto.marca}}</td>
+              <td>{{produto.preco | currency:'R$'}}</td>
+              <td>{{produto.quantidade}}</td>
+              <td>
+                <button (click)="deleteProduto(produto.id)" class="btn btn-danger">Deletar</button>
+                <button (click)="updateProduto(produto.id)" class="btn btn-info">Editar</button>
+                <button (click)="produtoDetails(produto.id)" class="btn btn-info">Detalhes</button>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-right">
+            <pagination-controls (pageChange)="paginaAtual = $event" 
+                previousLabel="Anterior" nextLabel="Próximo">
+            </pagination-controls>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

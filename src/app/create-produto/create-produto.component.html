@@ -1,0 +1,78 @@
+<div class="card">
+  <div class="card-body">
+    <h3>Cadastrar Produto</h3>
+    <div [hidden]="submitted" style="width: 400px;">
+      <form (ngSubmit)="onSubmit()" [formGroup]="formCriar">
+        <div class="form-group">
+          <label for="name">Id</label>
+          <input type="number" class="form-control" id="id" formControlName="id" required [(ngModel)]="produto.id"
+            name="id">
+          <div *ngIf="!id.pristine && id.errors">
+            <p *ngIf="id.errors.required">
+              O Id é obrigatório!
+            </p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" class="form-control" id="nome" formControlName="nome" required [(ngModel)]="produto.nome"
+                  name="nome">
+                <div *ngIf="!nome.pristine && nome.errors">
+                  <p *ngIf="nome.errors.required">
+                    O Nome é obrigatório!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-6">
+              <div class="form-group">
+                  <label for="name">Marca</label>
+                  <input type="text" class="form-control" id="marca" formControlName="marca" required
+                    [(ngModel)]="produto.marca" name="marca">
+                  <div *ngIf="!marca.pristine && marca.errors">
+                    <p *ngIf="marca.errors.required">
+                      A Marca é obrigatório!
+                    </p>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-md-6">
+              <div class="form-group">
+                  <label for="name">Preço</label>
+                  <input type="number" class="form-control" id="preco" formControlName="preco" required
+                    [(ngModel)]="produto.preco" name="preco">
+                  <div *ngIf="!preco.pristine && preco.errors">
+                    <p *ngIf="preco.errors.required">
+                      O Preço é obrigatório!
+                    </p>
+                  </div>
+                </div>
+              </div>  
+            <div class="col-xs-6 col-md-6">
+              <div class="form-group">
+                <label for="name">Quantidade</label>
+                <input type="number" class="form-control" id="quantidade" formControlName="quantidade" required
+                  [(ngModel)]="produto.quantidade" name="quantidade">
+                <div *ngIf="!quantidade.pristine && quantidade.errors">
+                  <p *ngIf="quantidade.errors.required">
+                    A Quantidade é obrigatório!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <button [disabled]="!formCriar.valid" type="submit" class="btn btn-success">Cadastrar</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>Produto Cadastrado com Sucesso!</h4>
+      <button (click)="list()" class="btn btn-primary">Lista de Produtos</button><br>
+      <p></p>
+    </div>
+  </div>
+</div>
